@@ -36,3 +36,31 @@ galleryImages.forEach((image) => {
     lightbox.open();
   });
 });
+
+// document.addEventListener("keydown", (event) => {
+//   if (lightbox.isShowing()) {
+//     if (event.key === "ArrowLeft") {
+//       lightbox.prev();
+//     } else if (event.key === "ArrowRight") {
+//       lightbox.next();
+//     } else if (event.key === "Escape") {
+//       lightbox.close();
+//     }
+//   }
+// });
+
+document.addEventListener("keydown", (event) => {
+  if (lightbox.isShowing()) {
+    switch (event.key) {
+      case "ArrowLeft":
+        lightbox.prev();
+        break;
+      case "ArrowRight":
+        lightbox.next();
+        break;
+      case "Escape":
+        lightbox.close();
+        break;
+    }
+  }
+});
