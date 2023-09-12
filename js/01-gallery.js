@@ -46,8 +46,7 @@ function handleKeyPress(event) {
   if (event.key === "Escape") {
     if (instance) {
       instance.close();
-      instance = null;
+      window.removeEventListener("keydown", handleKeyPress);
     }
-    window.removeEventListener("keydown", handleKeyPress);
   }
 }

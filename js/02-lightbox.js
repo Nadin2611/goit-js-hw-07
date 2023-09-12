@@ -3,8 +3,6 @@ import { galleryItems } from "./gallery-items.js";
 
 console.log(galleryItems);
 
-// 1. Створення і рендер розмітки на підставі масиву даних galleryItems і наданого шаблону елемента галереї. Використовуй готовий код з першого завдання.
-
 const gallery = document.querySelector("ul.gallery");
 const markup = galleryItems
   .map(
@@ -35,32 +33,4 @@ galleryImages.forEach((image) => {
   image.addEventListener("click", () => {
     lightbox.open();
   });
-});
-
-// document.addEventListener("keydown", (event) => {
-//   if (lightbox.isShowing()) {
-//     if (event.key === "ArrowLeft") {
-//       lightbox.prev();
-//     } else if (event.key === "ArrowRight") {
-//       lightbox.next();
-//     } else if (event.key === "Escape") {
-//       lightbox.close();
-//     }
-//   }
-// });
-
-document.addEventListener("keydown", (event) => {
-  if (lightbox.isShowing()) {
-    switch (event.key) {
-      case "ArrowLeft":
-        lightbox.prev();
-        break;
-      case "ArrowRight":
-        lightbox.next();
-        break;
-      case "Escape":
-        lightbox.close();
-        break;
-    }
-  }
 });
